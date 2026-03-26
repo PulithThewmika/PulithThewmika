@@ -48,4 +48,3 @@ Hi! I’m Pulith Thewmika. I’m passionate about learning, building projects, a
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=PulithThewmika&theme=default&no-frame=true&no-bg=true&margin-w=4)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
