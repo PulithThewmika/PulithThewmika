@@ -1,8 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Pulith%20Thewmika&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Full%20Stack%20Developer%20%7C%20Problem%20Solver%20%7C%20Open%20Source%20Enthusiast&descAlignY=55&descSize=16" />
+<img src="assets/banner.svg" width="100%" alt="Pulith Thewmika Banner"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6AD3F7&center=true&vCenter=true&random=false&width=600&lines=Hey+there!+I'm+Pulith+%F0%9F%91%8B;Full+Stack+Developer;Building+cool+stuff+with+code;Always+learning+%F0%9F%9A%80)](https://git.io/typing-svg)
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=6AD3F7&center=true&vCenter=true&random=false&width=600&lines=Hey+there!+I'm+Pulith+%F0%9F%91%8B;Full+Stack+Developer;Building+cool+stuff+with+code;Always+learning+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 <br/>
 
@@ -82,12 +84,12 @@ interests: [Open Source, Problem Solving, Tech]
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=PulithThewmika&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6AD3F7&icon_color=6AD3F7&text_color=ffffff&count_private=true" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PulithThewmika&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6AD3F7&text_color=ffffff&layout=compact&langs_count=8" height="165" />
+<img src="https://github-readme-stats.vercel.app/api?username=PulithThewmika&show_icons=true&hide_border=true&bg_color=0d1117&title_color=6AD3F7&icon_color=6AD3F7&text_color=ffffff&ring_color=6AD3F7" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PulithThewmika&hide_border=true&bg_color=0d1117&title_color=6AD3F7&text_color=ffffff&layout=compact&langs_count=8" height="165" />
 
 <br/>
 
-<img src="https://nirzak-streak-stats.vercel.app/?user=PulithThewmika&theme=tokyonight&hide_border=true&background=0d1117&stroke=6AD3F7&ring=6AD3F7&fire=FF6B6B&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=6AD3F7&sideLabels=6AD3F7&dates=888888" />
+<img src="https://streak-stats.demolab.com/?user=PulithThewmika&hide_border=true&background=0d1117&stroke=6AD3F7&ring=6AD3F7&fire=FF6B6B&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=6AD3F7&sideLabels=6AD3F7&dates=888888" />
 
 </div>
 
