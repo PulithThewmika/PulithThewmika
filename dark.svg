@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="Pulith Thewmika — Full Stack Developer">
+<style><![CDATA[
+    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; }
+    .sans { font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Inter, sans-serif; }
+    .heavy { font-weight: 700; letter-spacing: -0.5px; }
+    .ascii-line {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 10px;
+      opacity: 0;
+      animation: reveal 0.6s ease-out forwards;
+    }
+    @keyframes reveal { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+
+    .float-ascii { animation: floaty 6s ease-in-out infinite; transform-origin: center; }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+    .grad-shift { animation: gradShift 8s ease-in-out infinite; }
+    @keyframes gradShift {
+      0%   { stop-color: #22D3EE; }
+      33%  { stop-color: #7C3AED; }
+      66%  { stop-color: #F97316; }
+      100% { stop-color: #22D3EE; }
+    }
+    .grad-shift-2 { animation: gradShift2 8s ease-in-out infinite; }
+    @keyframes gradShift2 {
+      0%   { stop-color: #7C3AED; }
+      33%  { stop-color: #F97316; }
+      66%  { stop-color: #22D3EE; }
+      100% { stop-color: #7C3AED; }
+    }
+
+    .cursor { animation: blink 1s steps(2, start) infinite; }
+    @keyframes blink { to { visibility: hidden; } }
+
+    .fade-in { opacity: 0; animation: fadeIn 0.6s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: translateX(0); } }
+
+    .pill:hover rect { filter: brightness(1.25); }
+    .pill { animation: fadeIn 0.5s ease-out both; }
+
+    .glow-pulse { animation: glowPulse 4s ease-in-out infinite; }
+    @keyframes glowPulse { 0%,100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+
+    .shimmer-move { animation: shimmerMove 6s linear infinite; }
+    @keyframes shimmerMove { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+    .scan { animation: scan 4s linear infinite; }
+    @keyframes scan { 0% { transform: translateY(-20px); } 100% { transform: translateY(400px); } }
+
+    .particle { animation: drift 12s ease-in-out infinite; }
+    @keyframes drift {
+      0%,100% { transform: translate(0,0); opacity: 0.2; }
+      50%     { transform: translate(20px,-14px); opacity: 0.7; }
+    }
+    ]]></style>
+<defs>
+
+    <radialGradient id="glow-orange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-violet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Panel glass gradient -->
+    <linearGradient id="panel-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B1220" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- ASCII animated gradient (cyan → violet → orange) -->
+    <linearGradient id="ascii-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#22D3EE"   class="grad-shift"/>
+      <stop offset="55%" stop-color="#7C3AED" class="grad-shift-2"/>
+      <stop offset="100%" stop-color="#F97316" class="grad-shift"/>
+    </linearGradient>
+
+    <!-- Accent gradient for name / headings -->
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#F97316"/>
+      <stop offset="50%"  stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.5 0;0.5 0;-0.5 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Border shimmer sweep -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#F97316" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#F97316" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Scanline gradient -->
+    <linearGradient id="scanline-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#22D3EE" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Noise via turbulence -->
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0"/>
+    </filter>
+
+    <!-- Soft glow -->
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="big-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+
+    <!-- Clip paths for rounded panels -->
+    <clipPath id="clip-left">
+      <rect x="20" y="20" width="440" height="420" rx="20" ry="20"/>
+    </clipPath>
+    <clipPath id="clip-right">
+      <rect x="480" y="20" width="700" height="420" rx="20" ry="20"/>
+    </clipPath>
+    <clipPath id="clip-canvas">
+      <rect x="0" y="0" width="1200" height="460" rx="24" ry="24"/>
+    </clipPath>
+    
+</defs>
+<g clip-path="url(#clip-canvas)">
+<rect x="0" y="0" width="1200" height="460" fill="#030712"/>
+<g filter="url(#big-blur)" class="glow-pulse">
+<circle cx="200"  cy="80"  r="180" fill="url(#glow-orange)"/>
+<circle cx="1050" cy="120" r="200" fill="url(#glow-violet)"/>
+<circle cx="600"  cy="420" r="220" fill="url(#glow-cyan)"/>
+</g>
+<rect x="0" y="0" width="1200" height="460" filter="url(#noise)" opacity="0.06"/>
+<circle class="particle" cx="120" cy="320" r="1.6" fill="#22D3EE" opacity="0.5" style="animation-delay:0s"/>
+<circle class="particle" cx="280" cy="200" r="1.2" fill="#7C3AED" opacity="0.5" style="animation-delay:2s"/>
+<circle class="particle" cx="400" cy="90" r="1.4" fill="#F97316" opacity="0.5" style="animation-delay:4s"/>
+<circle class="particle" cx="720" cy="380" r="1.8" fill="#22D3EE" opacity="0.5" style="animation-delay:1s"/>
+<circle class="particle" cx="900" cy="60" r="1.3" fill="#7C3AED" opacity="0.5" style="animation-delay:3s"/>
+<circle class="particle" cx="1080" cy="280" r="1.5" fill="#F97316" opacity="0.5" style="animation-delay:5s"/>
+<circle class="particle" cx="560" cy="40" r="1.2" fill="#22D3EE" opacity="0.5" style="animation-delay:2.5s"/>
+<circle class="particle" cx="820" cy="220" r="1.6" fill="#7C3AED" opacity="0.5" style="animation-delay:4.5s"/>
+<g>
+<rect x="20" y="20" width="440" height="420" rx="20" ry="20" fill="url(#panel-grad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+<rect x="21" y="21" width="438" height="42" rx="19" fill="rgba(255,255,255,0.14)" opacity="0.10"/>
+<g>
+<circle cx="42" cy="42" r="5" fill="#FF5F57"/>
+<circle cx="60" cy="42" r="5" fill="#FEBC2E"/>
+<circle cx="78" cy="42" r="5" fill="#28C840"/>
+<text x="240.0" y="46" text-anchor="middle" class="mono" font-size="10" fill="#94A3B8">— pulith@dev:~ —</text>
+</g>
+<g clip-path="url(#clip-left)">
+<g class="float-ascii">
+<text xml:space="preserve" x="42" y="66.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.00s">***************++=====~~~---:::::::.....</text>
+<text xml:space="preserve" x="42" y="76.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.06s">***************+=~=~~==~~---::::::......</text>
+<text xml:space="preserve" x="42" y="87.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.12s">*************+=+*+=*~--~-~---::::::.....</text>
+<text xml:space="preserve" x="42" y="97.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.18s">************=+%@@@@@@%*~-:--::::::......</text>
+<text xml:space="preserve" x="42" y="108.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.24s">***********%@@@@@@@@@@@@@=.-::::::......</text>
+<text xml:space="preserve" x="42" y="118.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.30s">**********#@@@@@@@@@@@@@@@=:-::::::.....</text>
+<text xml:space="preserve" x="42" y="129.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.36s">**********@@@@@@@@@@@@@@@@@:-::::::.....</text>
+<text xml:space="preserve" x="42" y="139.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.42s">**********@@@@%#**+*#%@@@@@-:::::::.....</text>
+<text xml:space="preserve" x="42" y="150.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.48s">**********@@@#+==~==+#@@@@@-::::::::....</text>
+<text xml:space="preserve" x="42" y="160.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.54s">**********%@@*+==~~~+*#@@@@:--::::::....</text>
+<text xml:space="preserve" x="42" y="171.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.60s">**********#@##+=--:-+*%@@@%:--:::::::...</text>
+<text xml:space="preserve" x="42" y="181.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.66s">***********@***%+::*#*#%@@#:--:::::::...</text>
+<text xml:space="preserve" x="42" y="192.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.72s">**********+@+****~+*+##*%@*:--::::::::..</text>
+<text xml:space="preserve" x="42" y="202.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.78s">**********=*+=+===++===+%%*----:::::::..</text>
+<text xml:space="preserve" x="42" y="213.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.84s">**********~~=---~~=+---+@*~:----:::::::.</text>
+<text xml:space="preserve" x="42" y="223.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.90s">**********==*-:.=~=+.-~*@*~-~---:::::::.</text>
+<text xml:space="preserve" x="42" y="234.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:0.96s">*********++=#~-=#*#%+-=%@=-~-----:::::::</text>
+<text xml:space="preserve" x="42" y="244.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.02s">*********+++#==##+*%*~+@=-~~-----:::::::</text>
+<text xml:space="preserve" x="42" y="255.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.08s">*********+++**=~=*#=~=#%-~~~~-----::::::</text>
+<text xml:space="preserve" x="42" y="265.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.14s">*********++++#*=~-~=+#@#-~~~~------:::::</text>
+<text xml:space="preserve" x="42" y="276.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.20s">*********+++++@@@##%@@@*-=~~~-----::::::</text>
+<text xml:space="preserve" x="42" y="286.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.26s">*********++++++#@@@@%**%-~~~~~-----:::::</text>
+<text xml:space="preserve" x="42" y="297.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.32s">*********++++~++======+%-.:-~~------::::</text>
+<text xml:space="preserve" x="42" y="307.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.38s">***********+~++==~~~~~~*.:.::-~-----::::</text>
+<text xml:space="preserve" x="42" y="318.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.44s">*********+~::@*==~~~-.*~...:..:------:::</text>
+<text xml:space="preserve" x="42" y="328.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.50s">*******+~...~%+====- ++ ........::----::</text>
+<text xml:space="preserve" x="42" y="339.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.56s">*****+-....:~%*~-~~.~#.............::-::</text>
+<text xml:space="preserve" x="42" y="349.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.62s">***+-....:.:=@*=~-.:#:.............:::-:</text>
+<text xml:space="preserve" x="42" y="360.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.68s">**+:.......~~-~+~. *~ ..............::-:</text>
+<text xml:space="preserve" x="42" y="370.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.74s">**:........~- .-: =+ .................::</text>
+<text xml:space="preserve" x="42" y="381.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.80s">#=.........~-....-#....................:</text>
+<text xml:space="preserve" x="42" y="391.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.86s">#~.........~-....*-.....................</text>
+<text xml:space="preserve" x="42" y="402.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.92s">*-.........=~.. += .....................</text>
+<text xml:space="preserve" x="42" y="412.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:1.98s">*:........ =~..-+......................:</text>
+<text xml:space="preserve" x="42" y="423.0" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:2.04s">*:........ ==..*-.......................</text>
+<text xml:space="preserve" x="42" y="433.5" class="ascii-line" fill="url(#ascii-grad)" filter="url(#soft-glow)" style="animation-delay:2.10s">+......... == ~+........................</text>
+</g>
+<rect class="scan" x="20" y="60" width="440" height="14" fill="url(#scanline-grad)"/>
+</g>
+</g>
+<g>
+<rect x="480" y="20" width="700" height="420" rx="20" ry="20" fill="url(#panel-grad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+<rect x="481" y="21" width="698" height="42" rx="19" fill="rgba(255,255,255,0.14)" opacity="0.10"/>
+<g>
+<circle cx="502" cy="42" r="5" fill="#FF5F57"/>
+<circle cx="520" cy="42" r="5" fill="#FEBC2E"/>
+<circle cx="538" cy="42" r="5" fill="#28C840"/>
+<text x="830.0" y="46" text-anchor="middle" class="mono" font-size="10" fill="#94A3B8">— zsh — pulith@thewmika ~/portfolio —</text>
+</g>
+<text x="512" y="102" class="mono fade-in" font-size="13" fill="#10B981" style="animation-delay:0.2s">$ whoami</text>
+<text x="512" y="132" class="sans heavy fade-in" font-size="34" fill="#F8FAFC" style="animation-delay:0.5s">Hi 👋, I'm <tspan fill="url(#accent-grad)">Pulith Thewmika</tspan></text>
+<text x="512" y="168" class="mono" font-size="16" fill="#94A3B8">&gt; </text>
+<clipPath id="phrase-clip-0">
+          <rect x="0" y="0" width="0" height="60">
+            <animate attributeName="width" values="0;204;204" keyTimes="0;0.08000;1" dur="15.0s" repeatCount="indefinite" calcMode="linear"/>
+          </rect>
+        </clipPath>
+<g clip-path="url(#phrase-clip-0)" transform="translate(534 168)">
+          <text x="0" y="0" class="mono" font-size="16" fill="#22D3EE" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.00667;0.18667;0.20000;1" dur="15.0s" repeatCount="indefinite"/>
+            Full Stack Developer
+          </text>
+          <rect class="cursor" x="187" y="-13" width="8" height="16" rx="1" fill="#F97316" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.00667;0.18667;0.20000;1" dur="15.0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+<clipPath id="phrase-clip-1">
+          <rect x="0" y="0" width="0" height="60">
+            <animate attributeName="width" values="0;0;268;268" keyTimes="0;0.20000;0.28000;1" dur="15.0s" repeatCount="indefinite" calcMode="linear"/>
+          </rect>
+        </clipPath>
+<g clip-path="url(#phrase-clip-1)" transform="translate(534 168)">
+          <text x="0" y="0" class="mono" font-size="16" fill="#22D3EE" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20000;0.20667;0.38667;0.40000;1" dur="15.0s" repeatCount="indefinite"/>
+            Java &amp; Spring Boot Engineer
+          </text>
+          <rect class="cursor" x="251" y="-13" width="8" height="16" rx="1" fill="#F97316" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20000;0.20667;0.38667;0.40000;1" dur="15.0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+<clipPath id="phrase-clip-2">
+          <rect x="0" y="0" width="0" height="60">
+            <animate attributeName="width" values="0;0;222;222" keyTimes="0;0.40000;0.48000;1" dur="15.0s" repeatCount="indefinite" calcMode="linear"/>
+          </rect>
+        </clipPath>
+<g clip-path="url(#phrase-clip-2)" transform="translate(534 168)">
+          <text x="0" y="0" class="mono" font-size="16" fill="#22D3EE" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40000;0.40667;0.58667;0.60000;1" dur="15.0s" repeatCount="indefinite"/>
+            IEEE CS SLIIT Web Lead
+          </text>
+          <rect class="cursor" x="205" y="-13" width="8" height="16" rx="1" fill="#F97316" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40000;0.40667;0.58667;0.60000;1" dur="15.0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+<clipPath id="phrase-clip-3">
+          <rect x="0" y="0" width="0" height="60">
+            <animate attributeName="width" values="0;0;194;194" keyTimes="0;0.60000;0.68000;1" dur="15.0s" repeatCount="indefinite" calcMode="linear"/>
+          </rect>
+        </clipPath>
+<g clip-path="url(#phrase-clip-3)" transform="translate(534 168)">
+          <text x="0" y="0" class="mono" font-size="16" fill="#22D3EE" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.60000;0.60667;0.78667;0.80000;1" dur="15.0s" repeatCount="indefinite"/>
+            Building DeployLens
+          </text>
+          <rect class="cursor" x="177" y="-13" width="8" height="16" rx="1" fill="#F97316" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.60000;0.60667;0.78667;0.80000;1" dur="15.0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+<clipPath id="phrase-clip-4">
+          <rect x="0" y="0" width="0" height="60">
+            <animate attributeName="width" values="0;0;231;231" keyTimes="0;0.80000;0.88000;1" dur="15.0s" repeatCount="indefinite" calcMode="linear"/>
+          </rect>
+        </clipPath>
+<g clip-path="url(#phrase-clip-4)" transform="translate(534 168)">
+          <text x="0" y="0" class="mono" font-size="16" fill="#22D3EE" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.80000;0.80667;0.98667;1.00000;1" dur="15.0s" repeatCount="indefinite"/>
+            Open Source Contributor
+          </text>
+          <rect class="cursor" x="214" y="-13" width="8" height="16" rx="1" fill="#F97316" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.80000;0.80667;0.98667;1.00000;1" dur="15.0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+<g class="fade-in" style="animation-delay:1.20s"><text x="512" y="198" class="mono" font-size="13" fill="#94A3B8">📍</text><text x="534" y="198" class="mono" font-size="13" fill="#94A3B8">Location</text><text x="652" y="198" class="mono" font-size="13" fill="#F8FAFC">→ Sri Lanka</text></g>
+<g class="fade-in" style="animation-delay:1.35s"><text x="512" y="220" class="mono" font-size="13" fill="#94A3B8">🎓</text><text x="534" y="220" class="mono" font-size="13" fill="#94A3B8">Education</text><text x="652" y="220" class="mono" font-size="13" fill="#F8FAFC">→ BSc (Hons) Computer Science, SLIIT</text></g>
+<g class="fade-in" style="animation-delay:1.50s"><text x="512" y="242" class="mono" font-size="13" fill="#94A3B8">🎯</text><text x="534" y="242" class="mono" font-size="13" fill="#94A3B8">Current Focus</text><text x="652" y="242" class="mono" font-size="13" fill="#F8FAFC">→ DeployLens — deployment-aware observability</text></g>
+<g class="fade-in" style="animation-delay:1.65s"><text x="512" y="264" class="mono" font-size="13" fill="#94A3B8">🌐</text><text x="534" y="264" class="mono" font-size="13" fill="#94A3B8">Portfolio</text><text x="652" y="264" class="mono" font-size="13" fill="#F8FAFC">→ pulith.me</text></g>
+<g class="fade-in" style="animation-delay:1.80s"><text x="512" y="286" class="mono" font-size="13" fill="#94A3B8">✉️</text><text x="534" y="286" class="mono" font-size="13" fill="#94A3B8">Email</text><text x="652" y="286" class="mono" font-size="13" fill="#F8FAFC">→ puliththewmika@gmail.com</text></g>
+<line x1="512" y1="316" x2="1148" y2="316" stroke="rgba(255,255,255,0.14)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="512" y="338" class="mono" font-size="11" fill="#64748B">// STACK</text>
+<g class="pill" style="animation-delay:2.00s"><rect x="512" y="354" width="55" height="22" rx="11" fill="#ED8B00" fill-opacity="0.14" stroke="#ED8B00" stroke-opacity="0.55" stroke-width="1"/><circle cx="523" cy="365" r="3" fill="#ED8B00"/><text x="532" y="369" class="mono" font-size="11" fill="#F8FAFC">Java</text></g>
+<g class="pill" style="animation-delay:2.06s"><rect x="574.8" y="354" width="98" height="22" rx="11" fill="#3178C6" fill-opacity="0.14" stroke="#3178C6" stroke-opacity="0.55" stroke-width="1"/><circle cx="585.8" cy="365" r="3" fill="#3178C6"/><text x="594.8" y="369" class="mono" font-size="11" fill="#F8FAFC">TypeScript</text></g>
+<g class="pill" style="animation-delay:2.12s"><rect x="680.8" y="354" width="69" height="22" rx="11" fill="#3776AB" fill-opacity="0.14" stroke="#3776AB" stroke-opacity="0.55" stroke-width="1"/><circle cx="691.8" cy="365" r="3" fill="#3776AB"/><text x="700.8" y="369" class="mono" font-size="11" fill="#F8FAFC">Python</text></g>
+<g class="pill" style="animation-delay:2.18s"><rect x="758.0" y="354" width="98" height="22" rx="11" fill="#F7DF1E" fill-opacity="0.14" stroke="#F7DF1E" stroke-opacity="0.55" stroke-width="1"/><circle cx="769.0" cy="365" r="3" fill="#F7DF1E"/><text x="778.0" y="369" class="mono" font-size="11" fill="#F8FAFC">JavaScript</text></g>
+<g class="pill" style="animation-delay:2.24s"><rect x="864.0" y="354" width="69" height="22" rx="11" fill="#6DB33F" fill-opacity="0.14" stroke="#6DB33F" stroke-opacity="0.55" stroke-width="1"/><circle cx="875.0" cy="365" r="3" fill="#6DB33F"/><text x="884.0" y="369" class="mono" font-size="11" fill="#F8FAFC">Spring</text></g>
+<g class="pill" style="animation-delay:2.30s"><rect x="941.2" y="354" width="76" height="22" rx="11" fill="#5FA04E" fill-opacity="0.14" stroke="#5FA04E" stroke-opacity="0.55" stroke-width="1"/><circle cx="952.2" cy="365" r="3" fill="#5FA04E"/><text x="961.2" y="369" class="mono" font-size="11" fill="#F8FAFC">Node.js</text></g>
+<g class="pill" style="animation-delay:2.36s"><rect x="1025.6000000000001" y="354" width="62" height="22" rx="11" fill="#61DAFB" fill-opacity="0.14" stroke="#61DAFB" stroke-opacity="0.55" stroke-width="1"/><circle cx="1036.6000000000001" cy="365" r="3" fill="#61DAFB"/><text x="1045.6000000000001" y="369" class="mono" font-size="11" fill="#F8FAFC">React</text></g>
+<g class="pill" style="animation-delay:2.42s"><rect x="512" y="384" width="55" height="22" rx="11" fill="#646CFF" fill-opacity="0.14" stroke="#646CFF" stroke-opacity="0.55" stroke-width="1"/><circle cx="523" cy="395" r="3" fill="#646CFF"/><text x="532" y="399" class="mono" font-size="11" fill="#F8FAFC">Vite</text></g>
+<g class="pill" style="animation-delay:2.48s"><rect x="574.8" y="384" width="84" height="22" rx="11" fill="#38BDF8" fill-opacity="0.14" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1"/><circle cx="585.8" cy="395" r="3" fill="#38BDF8"/><text x="594.8" y="399" class="mono" font-size="11" fill="#F8FAFC">Tailwind</text></g>
+<g class="pill" style="animation-delay:2.54s"><rect x="666.4" y="384" width="76" height="22" rx="11" fill="#4EA94B" fill-opacity="0.14" stroke="#4EA94B" stroke-opacity="0.55" stroke-width="1"/><circle cx="677.4" cy="395" r="3" fill="#4EA94B"/><text x="686.4" y="399" class="mono" font-size="11" fill="#F8FAFC">MongoDB</text></g>
+<g class="pill" style="animation-delay:2.60s"><rect x="750.8" y="384" width="62" height="22" rx="11" fill="#4479A1" fill-opacity="0.14" stroke="#4479A1" stroke-opacity="0.55" stroke-width="1"/><circle cx="761.8" cy="395" r="3" fill="#4479A1"/><text x="770.8" y="399" class="mono" font-size="11" fill="#F8FAFC">MySQL</text></g>
+<g class="pill" style="animation-delay:2.66s"><rect x="820.8" y="384" width="48" height="22" rx="11" fill="#FF9900" fill-opacity="0.14" stroke="#FF9900" stroke-opacity="0.55" stroke-width="1"/><circle cx="831.8" cy="395" r="3" fill="#FF9900"/><text x="840.8" y="399" class="mono" font-size="11" fill="#F8FAFC">AWS</text></g>
+<g class="pill" style="animation-delay:2.72s"><rect x="876.4" y="384" width="69" height="22" rx="11" fill="#2496ED" fill-opacity="0.14" stroke="#2496ED" stroke-opacity="0.55" stroke-width="1"/><circle cx="887.4" cy="395" r="3" fill="#2496ED"/><text x="896.4" y="399" class="mono" font-size="11" fill="#F8FAFC">Docker</text></g>
+<g class="pill" style="animation-delay:2.78s"><rect x="953.6" y="384" width="62" height="22" rx="11" fill="#F24E1E" fill-opacity="0.14" stroke="#F24E1E" stroke-opacity="0.55" stroke-width="1"/><circle cx="964.6" cy="395" r="3" fill="#F24E1E"/><text x="973.6" y="399" class="mono" font-size="11" fill="#F8FAFC">Figma</text></g>
+<line x1="512" y1="416" x2="1148" y2="416" stroke="rgba(255,255,255,0.14)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="512" y="438" class="mono" font-size="11" fill="#64748B">// CONNECT</text>
+<g class="fade-in" style="animation-delay:3.00s">
+<circle cx="521.0" cy="459" r="7" fill="#F8FAFC" fill-opacity="0.18" stroke="#F8FAFC" stroke-opacity="0.7" stroke-width="1"/>
+<circle cx="521.0" cy="459" r="2.5" fill="#F8FAFC"/>
+<text x="534.0" y="456" class="mono" font-size="10" fill="#94A3B8">GitHub</text>
+<text x="534.0" y="469" class="mono" font-size="11" fill="#F8FAFC">@PulithThewmika</text>
+</g>
+<g class="fade-in" style="animation-delay:3.15s">
+<circle cx="680.0" cy="459" r="7" fill="#22D3EE" fill-opacity="0.18" stroke="#22D3EE" stroke-opacity="0.7" stroke-width="1"/>
+<circle cx="680.0" cy="459" r="2.5" fill="#22D3EE"/>
+<text x="693.0" y="456" class="mono" font-size="10" fill="#94A3B8">LinkedIn</text>
+<text x="693.0" y="469" class="mono" font-size="11" fill="#F8FAFC">in/PulithThewmika</text>
+</g>
+<g class="fade-in" style="animation-delay:3.30s">
+<circle cx="839.0" cy="459" r="7" fill="#F97316" fill-opacity="0.18" stroke="#F97316" stroke-opacity="0.7" stroke-width="1"/>
+<circle cx="839.0" cy="459" r="2.5" fill="#F97316"/>
+<text x="852.0" y="456" class="mono" font-size="10" fill="#94A3B8">Portfolio</text>
+<text x="852.0" y="469" class="mono" font-size="11" fill="#F8FAFC">pulith.me</text>
+</g>
+<g class="fade-in" style="animation-delay:3.45s">
+<circle cx="998.0" cy="459" r="7" fill="#10B981" fill-opacity="0.18" stroke="#10B981" stroke-opacity="0.7" stroke-width="1"/>
+<circle cx="998.0" cy="459" r="2.5" fill="#10B981"/>
+<text x="1011.0" y="456" class="mono" font-size="10" fill="#94A3B8">Email</text>
+<text x="1011.0" y="469" class="mono" font-size="11" fill="#F8FAFC">puliththewmika@gmail.com</text>
+</g>
+</g>
+<g clip-path="url(#clip-canvas)" opacity="0.9">
+      <rect class="shimmer-move" x="-1200" y="0" width="2400" height="2" fill="url(#shimmer)"/>
+      <rect class="shimmer-move" x="-1200" y="458" width="2400" height="2" fill="url(#shimmer)" style="animation-delay:3s"/>
+    </g>
+<rect x="0.5" y="0.5" width="1199" height="459" rx="24" ry="24" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+</g>
+</svg>
