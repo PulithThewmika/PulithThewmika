@@ -14,8 +14,8 @@ CS Undergraduate · Cloud, DevOps & Full-Stack Engineering · Open-Source Contri
 
 **Featured**
 - [**KubeX**](https://github.com/PulithThewmika/kubex) — latest project, reviewed end-to-end with CodeRabbit
-- [**AutoSenseLK**](https://github.com/PulithThewmika/AutoSenseLK) — scrape → snapshot → analytics pipeline, rule-based deal scorer · `FastAPI` `Celery` `Redis` `MongoDB` `AWS`
 - [**Stampede**](https://github.com/stampede-io) — Kafka sagas + outbox; k6: 1,000 VUs, 100 seats, **0 oversells** · `Java` `Spring` `Kafka`
+- [**AutoSenseLK**](https://github.com/PulithThewmika/AutoSenseLK) — scrape → snapshot → analytics pipeline, rule-based deal scorer · `FastAPI` `Celery` `Redis` `MongoDB` `AWS`
 - [**Fluxion**](https://github.com/L-Jayawardhana/Fluxion) — CI/CD to Azure VM, Nginx + TLS · `.NET` `Docker` `GitHub Actions`
 
 <div align="center">
